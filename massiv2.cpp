@@ -3,6 +3,8 @@ using namespace std;
 
 int main()
 {
+    setlocale(LC_ALL, "Russian");
+
     float maxiznach = 0;
     int maxipoz = -1;
     const int N = 24;
@@ -33,14 +35,17 @@ int main()
     80   // 23:00 — ночь
     };
     for (int i = 0; i < N; i++) {
-        loads[i] > maxiznach;
-        maxiznach = loads[i];
-        maxipoz = i;
+        if (loads[i] > maxiznach) {
+            maxiznach = loads[i];
+            maxipoz = i;
+        }
     }
-    if (maxipoz < 4 or maxipoz > 15)
-        cout << "Предельная нагрузка" << maxiznach << "наблюдается ночью";
-    else if (maxipoz < 9)
-        cout << "Предельная нагрузка" << maxiznach << "наблюдается утром";
-    else if (maxipoz < 16)
-        cout << "Предельная нагрузка" << maxiznach << "наблюдается вечером";
+    if (maxipoz < 5 or maxipoz > 22)
+        cout << "Предельная нагрузка " << maxiznach << " наблюдается ночью";
+    else if (maxipoz < 10)
+        cout << "Предельная нагрузка " << maxiznach << " наблюдается утром";
+    else if (maxipoz < 17)
+        cout << "Предельная нагрузка " << maxiznach << " наблюдается днем";
+    else if (maxipoz < 23)
+        cout << "Предельная нагрузка " << maxiznach << " наблюдается вечером";
 }
