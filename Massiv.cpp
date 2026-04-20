@@ -1,4 +1,12 @@
-﻿#include <iostream>
+/*
+Дан текст в формате HTML. Найти в нем все гиперссылки. Гиперссылки могут быть такими: 
+https://www.susu.ru/ru 
+https://ya.ru/?npr=1&utm_referrer=https%3A%2F%2Fyandex.ru%2F 
+http://web-archive.com 
+*/
+
+
+#include <iostream>
 #include <string>
 #include <vector>
 #include <locale>
